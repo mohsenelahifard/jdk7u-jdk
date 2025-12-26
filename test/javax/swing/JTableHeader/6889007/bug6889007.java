@@ -46,7 +46,7 @@ public class bug6889007 {
 
         SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
                 JTableHeader th = new JTableHeader();
                 th.setColumnModel(new JTable(20, 5).getColumnModel());

@@ -119,7 +119,7 @@ public class bug4220171 {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Test");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.setSize(200, 200);
 
         table = new JTable(2, 2);

@@ -25,7 +25,7 @@ public class bug6726866 extends JApplet {
         desktop.add(iFrame);
         frame.add(desktop);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.setSize(400, 400);
         frame.setVisible(true);
         frame.toFront();

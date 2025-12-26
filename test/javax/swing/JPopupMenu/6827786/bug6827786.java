@@ -135,7 +135,7 @@ public class bug6827786 {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("bug6827786");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.setJMenuBar(createMenuBar());
         focusable = new JButton("Set Focus Here");
         frame.add(focusable);

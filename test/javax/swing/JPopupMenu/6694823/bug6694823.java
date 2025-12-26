@@ -79,7 +79,7 @@ public class bug6694823 {
 
     private static void createGui() {
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
         frame.setUndecorated(true);
 
         popup = new JPopupMenu("Menu");

@@ -55,6 +55,7 @@ import java.util.concurrent.CountDownLatch;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import static java.awt.Transparency.*;
@@ -107,7 +108,7 @@ public class NonOpaqueDestLCDAATest extends JFrame implements ActionListener {
                 complete.countDown();
             }
         });
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
     }
 
     public void render(Graphics g, int w, int h) {

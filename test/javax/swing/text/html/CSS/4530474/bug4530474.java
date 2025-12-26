@@ -94,7 +94,7 @@ public class bug4530474 {
     private static void createAndShowGUI() {
 
         JFrame mainFrame = new JFrame("bug4530474");
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainframe.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         jep = new JEditorPane();
 
         try {

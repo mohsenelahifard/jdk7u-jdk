@@ -89,7 +89,7 @@ public class bug4251579 {
                 + "</body>";
 
         JFrame mainFrame = new JFrame("bug4251579");
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainframe.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         htmlComponent = new JLabel(htmlText);
         mainFrame.getContentPane().add(htmlComponent);

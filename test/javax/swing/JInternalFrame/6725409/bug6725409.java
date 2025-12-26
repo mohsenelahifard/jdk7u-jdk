@@ -76,7 +76,7 @@ public class bug6725409 {
 
     private void setupUIStep1() {
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         JDesktopPane desktop = new JDesktopPane();
         iFrame = new JInternalFrame("Internal Frame", true, true, true, true);

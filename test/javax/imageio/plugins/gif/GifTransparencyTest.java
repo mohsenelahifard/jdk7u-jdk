@@ -26,6 +26,7 @@ import javax.imageio.ImageWriter;
 import javax.imageio.spi.ImageWriterSpi;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JPanel;
 
 
@@ -118,7 +119,7 @@ public class GifTransparencyTest {
         JFrame f = new JFrame("Transparency");
         f.add(p);
 
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);
     }

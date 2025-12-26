@@ -42,7 +42,7 @@ public class bug6989617 {
         SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame();
-                frame. setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 panel = new MyPanel();
 
                 button = new JButton("Hello");

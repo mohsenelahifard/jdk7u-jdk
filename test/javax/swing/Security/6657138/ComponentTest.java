@@ -37,7 +37,7 @@ public class ComponentTest extends JFrame {
     private static JFrame frame;
 
     public ComponentTest() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         add(new JButton("JButton"));
         add(new JToggleButton("JToggleButton"));

@@ -97,7 +97,7 @@ public class bug5043626 {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         JEditorPane editorPane = new JEditorPane();
         editorPane.setContentType("text/html");

@@ -753,7 +753,7 @@ java/util/ListIterator
 java/awt/DefaultKeyboardFocusManager$TypeAheadMarker
 java/awt/KeyboardFocusManager$LightweightFocusRequest
 javax/swing/JFrame
-javax/swing/WindowConstants
+javax/swing/CloseOperation
 javax/swing/RootPaneContainer
 javax/swing/TransferHandler$HasGetTransferHandler
 javax/swing/JLabel

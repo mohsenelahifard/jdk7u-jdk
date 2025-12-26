@@ -47,7 +47,7 @@ public class bug6987844 {
         SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
                 JMenuBar bar = new JMenuBar();
                 menu1 = new JMenu("Menu1");

@@ -118,7 +118,7 @@ public class EmptyListEventTest {
     private static void createAndShowGUI() {
         JFrame frame = new JFrame();
         frame.setSize(200, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel(new BorderLayout());
 

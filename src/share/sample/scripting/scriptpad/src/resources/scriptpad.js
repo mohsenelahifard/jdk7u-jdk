@@ -336,7 +336,7 @@ with (guiPkgs) {
                 "var fr = new javax.swing.JFrame();\n" +
                 "// call all public methods as in Java\n" +
                 "fr.setTitle('hello');\n" +
-                "fr.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);\n" +
+                "fr.setDefaultCloseOperation(javax.swing.CloseOperation.DISPOSE_ON_CLOSE);\n" +
                 "fr.setSize(200, 200);\n" +
                 "fr.setVisible(true);");
         }
@@ -348,7 +348,7 @@ with (guiPkgs) {
                 "var fr = new javax.swing.JFrame();\n" +
                 "fr.setSize(200, 200);\n" +
                 "// access public get/set methods as fields\n" +
-                "fr.defaultCloseOperation = javax.swing.WindowConstants.DISPOSE_ON_CLOSE;\n" +
+                "fr.defaultCloseOperation = javax.swing.CloseOperation.DISPOSE_ON_CLOSE;\n" +
                 "fr.title = 'hello';\n" +
                 "fr.visible = true;"); 
         }
@@ -425,7 +425,7 @@ with (guiPkgs) {
 
             var helpFrame = new JFrame("Help - Global Functions");
             helpFrame.getContentPane().add("Center", scroller);
-            helpFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            helpFrame.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
             helpFrame.pack();
             helpFrame.setSize(500, 600); 
             helpFrame.setVisible(true);
@@ -586,7 +586,7 @@ with (guiPkgs) {
 
             // set menu bar to frame and show the frame   
             frame.setJMenuBar(createMenubar());
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
             frame.pack();
             frame.setSize(500, 600);
         }

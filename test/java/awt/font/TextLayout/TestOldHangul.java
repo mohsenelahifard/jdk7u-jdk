@@ -54,7 +54,7 @@ public class TestOldHangul {
             return;
         }
         JFrame frame = new JFrame(System.getProperty("java.version"));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         final JTextArea label = new JTextArea("(empty)");
         label.setSize(400, 300);

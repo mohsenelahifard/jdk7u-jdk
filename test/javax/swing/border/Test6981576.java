@@ -31,6 +31,7 @@
 import java.awt.Component;
 import java.awt.Graphics;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -63,7 +64,7 @@ public class Test6981576 extends TitledBorder implements Runnable, Thread.Uncaug
             panel.setBorder(this);
             this.frame = new JFrame(getClass().getSimpleName());
             this.frame.add(panel);
-            this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            this.frame.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
             this.frame.setVisible(true);
         }
         if (this.index == this.infos.length) {

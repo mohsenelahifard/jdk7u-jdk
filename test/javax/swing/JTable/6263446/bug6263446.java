@@ -233,7 +233,7 @@ public class bug6263446 {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("bug6263446");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         table = new JTable(createTableModel());
         frame.add(table);
         frame.pack();

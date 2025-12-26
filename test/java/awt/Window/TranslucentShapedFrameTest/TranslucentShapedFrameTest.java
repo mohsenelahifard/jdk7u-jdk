@@ -90,7 +90,7 @@ public class TranslucentShapedFrameTest extends javax.swing.JFrame {
         disposeFrameBtn = new javax.swing.JToggleButton();
         useSwingCb = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.CloseOperation.EXIT_ON_CLOSE);
         setTitle("TranslucentShapedFrameTest");
         jLabel1.setText("Frame Opacity:");
 

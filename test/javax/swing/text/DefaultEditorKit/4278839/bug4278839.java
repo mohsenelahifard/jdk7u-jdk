@@ -146,7 +146,7 @@ public class bug4278839 extends JFrame {
         JFrame frame = new JFrame();
         frame.setTitle("Bug# 4278839");
         frame.setSize(200, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         area = new JTextArea("\naaa bbb\nccc ddd\n");
         frame.getContentPane().add(new JScrollPane(area));
         frame.setVisible(true);

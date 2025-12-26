@@ -187,7 +187,7 @@ public class bug4697612 {
     private static void createAndShowGUI() {
         frame = new JFrame();
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         text = new JTextArea();
         try {

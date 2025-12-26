@@ -50,7 +50,7 @@ public class bug6542335 {
         SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
                 final JFrame frame = new JFrame("bug6542335");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
                 sb = new JScrollBar(0, 0, 1, 0, 1);
 

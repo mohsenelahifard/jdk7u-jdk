@@ -84,7 +84,7 @@ public class ConnectDialog extends InternalDialog
         this.jConsole = jConsole;
         setAccessibleDescription(this,
                                  getText("ConnectDialog.accessibleDescription"));
-        setDefaultCloseOperation(HIDE_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.HIDE_ON_CLOSE);
         setResizable(false);
         Container cp = (JComponent)getContentPane();
 

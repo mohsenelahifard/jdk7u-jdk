@@ -329,7 +329,7 @@ public class CTrayIcon extends CFRetainedResource implements TrayIconPeer {
         rp.putClientProperty(CPlatformWindow.WINDOW_STYLE, "small");
         rp.putClientProperty(CPlatformWindow.WINDOW_ZOOMABLE, "false");
 
-        dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        dialog.setDefaultCloseOperation(CloseOperation.DO_NOTHING_ON_CLOSE);
         dialog.setModal(false);
         dialog.setModalExclusionType(Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
         dialog.setAlwaysOnTop(true);

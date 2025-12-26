@@ -125,7 +125,7 @@ public class bug6505523 {
         JFrame frame = new JFrame("JTree Problem");
         frame.add(new JScrollPane(tree));
         frame.setSize(500, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

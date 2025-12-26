@@ -59,7 +59,7 @@ public class bug6884066 {
                 frame.add(header);
                 frame.pack();
                 frame.setVisible(true);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
             }
         });
         toolkit.realSync();

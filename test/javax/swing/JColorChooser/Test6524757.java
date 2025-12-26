@@ -42,7 +42,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import javax.swing.WindowConstants;
+import javax.swing.CloseOperation;
 import javax.swing.colorchooser.AbstractColorChooserPanel;
 
 import sun.swing.SwingUtilities2;
@@ -148,7 +148,7 @@ public class Test6524757 {
 
     private static Object[] create() {
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
         // show color chooser

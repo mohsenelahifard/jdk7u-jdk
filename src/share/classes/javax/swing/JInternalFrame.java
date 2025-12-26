@@ -110,7 +110,7 @@ import sun.swing.SwingUtilities2;
  *                   another window.
  */
 public class JInternalFrame extends JComponent implements
-        Accessible, WindowConstants,
+        Accessible,
         RootPaneContainer
 {
     /**
@@ -185,7 +185,7 @@ public class JInternalFrame extends JComponent implements
 
     private Rectangle normalBounds = null;
 
-    private int defaultCloseOperation = DISPOSE_ON_CLOSE;
+    private CloseOperation defaultCloseOperation = CloseOperation.DISPOSE_ON_CLOSE;
 
     /**
      * Contains the Component that focus is to go when
@@ -1646,29 +1646,26 @@ public class JInternalFrame extends JComponent implements
      * The possible choices are:
      * <p>
      * <dl>
-     * <dt><code>DO_NOTHING_ON_CLOSE</code>
+     * <dt>{@code CloseOperation.DO_NOTHING_ON_CLOSE}
      * <dd> Do nothing.
      *      This requires the program to handle the operation
-     *      in the <code>windowClosing</code> method
-     *      of a registered <code>InternalFrameListener</code> object.
-     * <dt><code>HIDE_ON_CLOSE</code>
+     *      in the {@code internalFrameClosing} method
+     *      of a registered {@code InternalFrameListener} object.
+     * <dt>{@code CloseOperation.HIDE_ON_CLOSE}
      * <dd> Automatically make the internal frame invisible.
-     * <dt><code>DISPOSE_ON_CLOSE</code>
+     * <dt>{@code CloseOperation.DISPOSE_ON_CLOSE}
      * <dd> Automatically dispose of the internal frame.
      * </dl>
      * <p>
-     * The default value is <code>DISPOSE_ON_CLOSE</code>.
+     * The default value is {@code DISPOSE_ON_CLOSE}.
      * Before performing the specified close operation,
-     * the internal frame fires
-     * an <code>INTERNAL_FRAME_CLOSING</code> event.
+     * the internal frame fires an
+     * {@code INTERNAL_FRAME_CLOSING} event.
      *
-     * @param operation one of the following constants defined in
-     *                  <code>javax.swing.WindowConstants</code>
-     *                  (an interface implemented by
-     *                  <code>JInternalFrame</code>):
-     *                  <code>DO_NOTHING_ON_CLOSE</code>,
-     *                  <code>HIDE_ON_CLOSE</code>, or
-     *                  <code>DISPOSE_ON_CLOSE</code>
+     * @param operation one of the values defined in {@link CloseOperation}:
+     *                  {@code DO_NOTHING_ON_CLOSE},
+     *                  {@code HIDE_ON_CLOSE}, or
+     *                  {@code DISPOSE_ON_CLOSE}
      *
      * @see #addInternalFrameListener
      * @see #getDefaultCloseOperation
@@ -1676,7 +1673,13 @@ public class JInternalFrame extends JComponent implements
      * @see #dispose
      * @see InternalFrameEvent#INTERNAL_FRAME_CLOSING
      */
-    public void setDefaultCloseOperation(int operation) {
+
+    public void setDefaultCloseOperation(CloseOperation operation) {
+        if (operation == null) {
+            throw new IllegalArgumentException(
+                "defaultCloseOperation cannot be null");
+        }
+
         this.defaultCloseOperation = operation;
     }
 
@@ -1687,7 +1690,7 @@ public class JInternalFrame extends JComponent implements
     *         frame
     * @see #setDefaultCloseOperation
     */
-    public int getDefaultCloseOperation() {
+    public CloseOperation getDefaultCloseOperation() {
         return defaultCloseOperation;
     }
 
@@ -1948,13 +1951,12 @@ public class JInternalFrame extends JComponent implements
                                     desktopIcon.toString() : "");
         String openedString = (opened ? "true" : "false");
         String defaultCloseOperationString;
-        if (defaultCloseOperation == HIDE_ON_CLOSE) {
-            defaultCloseOperationString = "HIDE_ON_CLOSE";
-        } else if (defaultCloseOperation == DISPOSE_ON_CLOSE) {
-            defaultCloseOperationString = "DISPOSE_ON_CLOSE";
-        } else if (defaultCloseOperation == DO_NOTHING_ON_CLOSE) {
-            defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
-        } else defaultCloseOperationString = "";
+        switch (defaultCloseOperation) {
+            case HIDE_ON_CLOSE -> defaultCloseOperationString = "HIDE_ON_CLOSE";
+            case DISPOSE_ON_CLOSE -> defaultCloseOperationString = "DISPOSE_ON_CLOSE";
+            case DO_NOTHING_ON_CLOSE -> defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
+            default -> defaultCloseOperationString = "";
+        }
 
         return super.paramString() +
         ",closable=" + closableString +

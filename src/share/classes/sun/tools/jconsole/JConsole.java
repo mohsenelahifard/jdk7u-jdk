@@ -117,7 +117,7 @@ public class JConsole extends JFrame
         setRootPane(new FixedJRootPane());
         setAccessibleDescription(this,
                                  getText("JConsole.accessibleDescription"));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         menuBar = new JMenuBar();
         setJMenuBar(menuBar);

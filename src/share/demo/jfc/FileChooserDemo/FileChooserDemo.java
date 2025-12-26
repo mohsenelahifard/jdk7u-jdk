@@ -78,7 +78,7 @@ import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.WindowConstants;
+import javax.swing.CloseOperation;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
@@ -816,7 +816,7 @@ public class FileChooserDemo extends JPanel implements ActionListener {
                     FileChooserDemo panel = new FileChooserDemo();
 
                     frame = new JFrame("FileChooserDemo");
-                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                    frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                     frame.getContentPane().add("Center", panel);
                     frame.pack();
                     frame.setVisible(true);

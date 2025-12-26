@@ -123,7 +123,7 @@ public class bug6636983 {
 
         JFrame frame = new JFrame("Test: " + getClass().getName());
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.add(ep);
         frame.setVisible(true);
     }

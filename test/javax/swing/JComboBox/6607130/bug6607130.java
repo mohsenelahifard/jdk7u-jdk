@@ -64,7 +64,7 @@ public class bug6607130 {
 
     private void setupUI() {
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         DefaultTableModel model = new DefaultTableModel(1, 1);
         JTable table = new JTable(model);

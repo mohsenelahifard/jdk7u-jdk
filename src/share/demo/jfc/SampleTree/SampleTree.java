@@ -135,7 +135,7 @@ public final class SampleTree {
         panel.add("Center", sp);
         panel.add("South", constructOptionsPanel());
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

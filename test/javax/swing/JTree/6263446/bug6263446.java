@@ -150,7 +150,7 @@ public class bug6263446 {
     private static void createAndShowGUI() {
 
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         tree = new JTree(createTreeModel());
         tree.setRootVisible(true);

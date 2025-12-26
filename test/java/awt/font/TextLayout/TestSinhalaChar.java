@@ -43,7 +43,7 @@ public class TestSinhalaChar {
 
     private void run() {
         JFrame frame = new JFrame("Test Character (no crash = PASS)");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         final JLabel label = new JLabel("(empty)");
         label.setSize(400, 100);

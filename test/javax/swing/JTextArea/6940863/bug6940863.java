@@ -76,7 +76,7 @@ public class bug6940863 {
                 frame = new JFrame("Vertical scrollbar shown without text");
 
                 frame.setContentPane(scrollPane);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
 

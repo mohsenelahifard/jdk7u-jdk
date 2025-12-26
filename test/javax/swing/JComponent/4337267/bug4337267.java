@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -43,7 +44,7 @@ public class bug4337267 {
 
     void initUI() {
         window = new JFrame("bug4337267");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         window.setSize(800, 600);
         Component content = createContentPane();
         window.add(content);

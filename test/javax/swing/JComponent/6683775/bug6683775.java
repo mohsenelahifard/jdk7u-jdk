@@ -39,7 +39,7 @@ public class bug6683775 {
                 p.setOpaque(false);
                 testFrame.add(p);
                 AWTUtilities.setWindowOpaque(testFrame, false);
-                testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                testframe.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 testFrame.setSize(400, 400);
                 testFrame.setLocation(0, 0);
                 testFrame.setVisible(true);

@@ -119,7 +119,7 @@ public abstract class TestXEmbedServer {
         b_modal.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     modal_d = new JDialog(f, "Modal dialog", true);
-                    modal_d.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                    modal_d.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
                     modal_d.setBounds(0, 100, 200, 50);
                     modal_d.getContentPane().add(b_close);
                     modal_d.validate();
@@ -163,7 +163,7 @@ public abstract class TestXEmbedServer {
 
         dummy = new JFrame("Dummy");
         dummy.getContentPane().add(new JButton("Button"));
-        dummy.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        dummy.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
         dummy.setBounds(0, VERTICAL_POSITION, 100, 100);
         dummy.setVisible(true);
 

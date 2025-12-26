@@ -59,7 +59,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
+import javax.swing.CloseOperation;
 
 
 /**
@@ -242,7 +242,7 @@ public class Ruler extends JFrame {
                 gg.dispose();
             }
         });
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         setSize(F_WIDTH, F_HEIGHT);
         setLocationByPlatform(true);
     }

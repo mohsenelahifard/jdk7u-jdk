@@ -745,7 +745,7 @@ sun/awt/X11/XConfigureEvent
 sun/awt/X11/PropMwmHints
 sun/awt/GlobalCursorManager$NativeUpdater
 javax/swing/JFrame
-javax/swing/WindowConstants
+javax/swing/CloseOperation
 javax/swing/RootPaneContainer
 javax/swing/TransferHandler$HasGetTransferHandler
 javax/swing/JLabel

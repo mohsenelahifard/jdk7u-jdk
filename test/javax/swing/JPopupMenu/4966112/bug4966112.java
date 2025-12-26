@@ -221,7 +221,7 @@ public class bug4966112 {
             public void run() {
                 JFrame frame = new JFrame("Test SplitPane");
                 frame.setSize(250, 200);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.setLayout(new BorderLayout());
 
                 shown = false;

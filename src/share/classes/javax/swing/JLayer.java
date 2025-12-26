@@ -103,7 +103,7 @@ import java.security.PrivilegedAction;
  *
  *     private static void createAndShowGUI() {
  *         final JFrame frame = new JFrame();
- *         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ *         frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
  *
  *         // work with the layer as with any other Swing component
  *         frame.add(createLayer());

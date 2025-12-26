@@ -367,7 +367,7 @@ public class JTop extends JPanel {
     private static void createAndShowGUI(JPanel jtop) {
         // Create and set up the window.
         JFrame frame = new JFrame("JTop");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         // Create and set up the content pane.
         JComponent contentPane = (JComponent) frame.getContentPane();

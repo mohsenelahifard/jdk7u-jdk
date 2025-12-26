@@ -153,7 +153,7 @@ public class PrintingStatus {
             abortDialog = abortPane.createDialog(parent, progressTitle);
         }
         // clicking the X button should not hide the dialog
-        abortDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        abortDialog.setDefaultCloseOperation(CloseOperation.DO_NOTHING_ON_CLOSE);
         abortDialog.addWindowListener(closeListener);
     }
 

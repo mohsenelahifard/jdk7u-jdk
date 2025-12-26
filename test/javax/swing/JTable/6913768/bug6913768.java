@@ -43,7 +43,7 @@ public class bug6913768 {
                         new Object[]{"col1", "col2"});
 
                 frame.getContentPane().add(new JScrollPane(table));
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.setSize(300, 200);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);

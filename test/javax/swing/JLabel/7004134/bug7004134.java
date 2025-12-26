@@ -86,7 +86,7 @@ public class bug7004134 {
                             frame = new JFrame();
 
                             frame.add(label);
-                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                             frame.pack();
                             frame.setVisible(true);
                         }

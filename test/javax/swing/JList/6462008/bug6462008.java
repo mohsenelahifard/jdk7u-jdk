@@ -355,7 +355,7 @@ public class bug6462008 {
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("bug6462008");
         frame.setSize(200, 500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         list = new JList(getModel());
         JPanel panel = new JPanel(new BorderLayout());

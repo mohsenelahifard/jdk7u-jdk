@@ -32,7 +32,7 @@ import java.awt.image.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
+import javax.swing.CloseOperation;
 
 public class DashStrokeTest extends Component {
 

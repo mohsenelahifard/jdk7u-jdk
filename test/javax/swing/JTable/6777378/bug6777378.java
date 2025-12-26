@@ -71,7 +71,7 @@ public class bug6777378 {
                 header.setToolTipText("hello");
 
                 frame = new JFrame();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.add(header);
 
                 frame.setSize(300, 300);

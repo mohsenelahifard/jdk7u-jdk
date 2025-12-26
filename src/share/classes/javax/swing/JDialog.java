@@ -94,8 +94,7 @@ import javax.accessibility.*;
  * @author James Gosling
  * @author Scott Violet
  */
-public class JDialog extends Dialog implements WindowConstants,
-                                               Accessible,
+public class JDialog extends Dialog implements Accessible,
                                                RootPaneContainer,
                                TransferHandler.HasGetTransferHandler
 {
@@ -106,7 +105,7 @@ public class JDialog extends Dialog implements WindowConstants,
     private static final Object defaultLookAndFeelDecoratedKey =
             new StringBuffer("JDialog.defaultLookAndFeelDecorated");
 
-    private int defaultCloseOperation = HIDE_ON_CLOSE;
+    private CloseOperation defaultCloseOperation = CloseOperation.HIDE_ON_CLOSE;
 
     /**
      * @see #getRootPane
@@ -682,15 +681,9 @@ public class JDialog extends Dialog implements WindowConstants,
 
         if (e.getID() == WindowEvent.WINDOW_CLOSING) {
             switch(defaultCloseOperation) {
-              case HIDE_ON_CLOSE:
-                 setVisible(false);
-                 break;
-              case DISPOSE_ON_CLOSE:
-                 dispose();
-                 break;
-              case DO_NOTHING_ON_CLOSE:
-                 default:
-                 break;
+                case HIDE_ON_CLOSE -> setVisible(false);
+                case DISPOSE_ON_CLOSE -> dispose();
+                case DO_NOTHING_ON_CLOSE -> { }
             }
         }
     }
@@ -702,20 +695,17 @@ public class JDialog extends Dialog implements WindowConstants,
      * You must specify one of the following choices:
      * <p>
      * <ul>
-     * <li>{@code DO_NOTHING_ON_CLOSE}
-     * (defined in {@code WindowConstants}):
+     * <li>{@code DO_NOTHING_ON_CLOSE} (defined in {@code CloseOperation})
      * Don't do anything; require the
      * program to handle the operation in the {@code windowClosing}
      * method of a registered {@code WindowListener} object.
      *
-     * <li>{@code HIDE_ON_CLOSE}
-     * (defined in {@code WindowConstants}):
+     * <li>{@code HIDE_ON_CLOSE} (defined in {@code CloseOperation})
      * Automatically hide the dialog after
      * invoking any registered {@code WindowListener}
      * objects.
      *
-     * <li>{@code DISPOSE_ON_CLOSE}
-     * (defined in {@code WindowConstants}):
+     * <li>{@code DISPOSE_ON_CLOSE} (defined in {@code CloseOperation})
      * Automatically hide and dispose the
      * dialog after invoking any registered {@code WindowListener}
      * objects.
@@ -736,24 +726,21 @@ public class JDialog extends Dialog implements WindowConstants,
      *         isn't one of the above valid values
      * @see #addWindowListener
      * @see #getDefaultCloseOperation
-     * @see WindowConstants
+     * @see CloseOperation
      *
      * @beaninfo
      *   preferred: true
      *       bound: true
-     *        enum: DO_NOTHING_ON_CLOSE WindowConstants.DO_NOTHING_ON_CLOSE
-     *              HIDE_ON_CLOSE       WindowConstants.HIDE_ON_CLOSE
-     *              DISPOSE_ON_CLOSE    WindowConstants.DISPOSE_ON_CLOSE
+     *        enum: DO_NOTHING_ON_CLOSE CloseOperation.DO_NOTHING_ON_CLOSE
+     *              HIDE_ON_CLOSE       CloseOperation.HIDE_ON_CLOSE
+     *              DISPOSE_ON_CLOSE    CloseOperation.DISPOSE_ON_CLOSE
      * description: The dialog's default close operation.
      */
-    public void setDefaultCloseOperation(int operation) {
-        if (operation != DO_NOTHING_ON_CLOSE &&
-            operation != HIDE_ON_CLOSE &&
-            operation != DISPOSE_ON_CLOSE) {
-            throw new IllegalArgumentException("defaultCloseOperation must be one of: DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE, or DISPOSE_ON_CLOSE");
+    public void setDefaultCloseOperation(CloseOperation operation) {
+        if (operation == null) {
+            throw new IllegalArgumentException("defaultCloseOperation cannot be null");
         }
-
-        int oldValue = this.defaultCloseOperation;
+        CloseOperation oldValue = this.defaultCloseOperation;
         this.defaultCloseOperation = operation;
         firePropertyChange("defaultCloseOperation", oldValue, operation);
     }
@@ -762,10 +749,10 @@ public class JDialog extends Dialog implements WindowConstants,
     * Returns the operation which occurs when the user
     * initiates a "close" on this dialog.
     *
-    * @return an integer indicating the window-close operation
+    * @return an CloseOperation indicating the window-close operation
     * @see #setDefaultCloseOperation
     */
-    public int getDefaultCloseOperation() {
+    public CloseOperation getDefaultCloseOperation() {
         return defaultCloseOperation;
     }
 
@@ -1198,11 +1185,11 @@ public class JDialog extends Dialog implements WindowConstants,
      */
     protected String paramString() {
         String defaultCloseOperationString;
-        if (defaultCloseOperation == HIDE_ON_CLOSE) {
+        if (defaultCloseOperation == CloseOperation.HIDE_ON_CLOSE) {
             defaultCloseOperationString = "HIDE_ON_CLOSE";
-        } else if (defaultCloseOperation == DISPOSE_ON_CLOSE) {
+        } else if (defaultCloseOperation == CloseOperation.DISPOSE_ON_CLOSE) {
             defaultCloseOperationString = "DISPOSE_ON_CLOSE";
-        } else if (defaultCloseOperation == DO_NOTHING_ON_CLOSE) {
+        } else if (defaultCloseOperation == CloseOperation.DO_NOTHING_ON_CLOSE) {
             defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
         } else defaultCloseOperationString = "";
         String rootPaneString = (rootPane != null ?

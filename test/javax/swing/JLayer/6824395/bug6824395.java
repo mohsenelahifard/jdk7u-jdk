@@ -44,7 +44,7 @@ public class bug6824395 {
         SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame("testing");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
                 JEditorPane editorPane = new JEditorPane();
                 String str = "hello\n";

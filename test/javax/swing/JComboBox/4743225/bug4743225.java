@@ -32,6 +32,7 @@ import sun.awt.SunToolkit;
 import javax.accessibility.AccessibleContext;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.SwingUtilities;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
@@ -48,7 +49,7 @@ public class bug4743225 extends JFrame {
     private static volatile boolean flag;
 
     public bug4743225() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         cb = new JComboBox(new Object[] {"one", "two", "three"});
         cb.addPopupMenuListener(new PopupMenuListener() {

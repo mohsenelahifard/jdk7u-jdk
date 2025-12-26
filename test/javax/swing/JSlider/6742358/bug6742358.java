@@ -39,7 +39,7 @@ public class bug6742358 extends JApplet {
         JFrame frame = new JFrame();
 
         frame.setContentPane(new TestPanel());
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
 

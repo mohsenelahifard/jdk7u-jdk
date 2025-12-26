@@ -88,7 +88,7 @@ public class bug6796710 {
 
                 frame.setContentPane(pnContent);
                 frame.setSize(400, 600);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
         });

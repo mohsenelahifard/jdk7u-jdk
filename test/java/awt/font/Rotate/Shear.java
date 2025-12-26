@@ -35,7 +35,7 @@ public class Shear extends Component {
 
     public static void main(String[] args) {
         JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         f.getContentPane().add("Center", new Shear());
         f.pack();
         f.setVisible(true);

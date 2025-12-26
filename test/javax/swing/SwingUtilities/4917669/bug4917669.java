@@ -98,7 +98,7 @@ public class bug4917669 {
     private static void createAndShowGUI() {
         mainFrame = new JFrame("Bug4917669");
         mainFrame.setLayout(new BorderLayout());
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainframe.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         mainFrame.setSize(50, 50);
         mainFrame.setVisible(true);
     }

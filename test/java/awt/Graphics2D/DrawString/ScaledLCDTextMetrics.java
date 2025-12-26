@@ -35,7 +35,7 @@ public class ScaledLCDTextMetrics extends Component {
 
     public static void main(String[] args) {
         JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         f.add("Center", new ScaledLCDTextMetrics());
         f.pack();
         f.setVisible(true);

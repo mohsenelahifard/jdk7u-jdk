@@ -59,7 +59,7 @@ public class bug6798062 extends JApplet {
 
         frame.setSize(400, 300);
         frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.add(new bug6798062().initialize());
 
         frame.setVisible(true);

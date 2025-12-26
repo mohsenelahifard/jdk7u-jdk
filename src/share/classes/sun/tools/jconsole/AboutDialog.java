@@ -59,7 +59,7 @@ public class AboutDialog extends InternalDialog {
 
         setAccessibleDescription(this,
                                  getText("Help.AboutDialog.accessibleDescription"));
-        setDefaultCloseOperation(HIDE_ON_CLOSE);
+        setDefaultCloseOperation(CloseOperation.HIDE_ON_CLOSE);
         setResizable(false);
         JComponent cp = (JComponent)getContentPane();
 

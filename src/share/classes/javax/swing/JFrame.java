@@ -72,7 +72,7 @@ import javax.accessibility.*;
  * {@link #setDefaultCloseOperation}.
  * To make the <code>JFrame</code> behave the same as a <code>Frame</code>
  * instance, use
- * <code>setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)</code>.
+ * <code>setDefaultCloseOperation(CloseOperation.DO_NOTHING_ON_CLOSE)</code>.
  * <p>
  * For more information on content panes
  * and other features that root panes provide,
@@ -111,20 +111,10 @@ import javax.accessibility.*;
  * @author Georges Saab
  * @author David Kloba
  */
-public class JFrame  extends Frame implements WindowConstants,
-                                              Accessible,
+public class JFrame  extends Frame implements Accessible,
                                               RootPaneContainer,
                               TransferHandler.HasGetTransferHandler
 {
-    /**
-     * The exit application default window close operation. If a window
-     * has this set as the close operation and is closed in an applet,
-     * a <code>SecurityException</code> may be thrown.
-     * It is recommended you only use this in an application.
-     * <p>
-     * @since 1.3
-     */
-    public static final int EXIT_ON_CLOSE = 3;
 
     /**
      * Key into the AppContext, used to check if should provide decorations
@@ -133,7 +123,7 @@ public class JFrame  extends Frame implements WindowConstants,
     private static final Object defaultLookAndFeelDecoratedKey =
             new StringBuffer("JFrame.defaultLookAndFeelDecorated");
 
-    private int defaultCloseOperation = HIDE_ON_CLOSE;
+    private CloseOperation defaultCloseOperation = CloseOperation.HIDE_ON_CLOSE;
 
     /**
      * The <code>TransferHandler</code> for this frame.
@@ -325,26 +315,22 @@ public class JFrame  extends Frame implements WindowConstants,
      * You must specify one of the following choices:
      * <p>
      * <ul>
-     * <li><code>DO_NOTHING_ON_CLOSE</code>
-     * (defined in <code>WindowConstants</code>):
+     * <li><code>DO_NOTHING_ON_CLOSE</code> (defined in <code>CloseOperation</code>):
      * Don't do anything; require the
      * program to handle the operation in the <code>windowClosing</code>
      * method of a registered <code>WindowListener</code> object.
      *
-     * <li><code>HIDE_ON_CLOSE</code>
-     * (defined in <code>WindowConstants</code>):
+     * <li><code>HIDE_ON_CLOSE</code> (defined in <code>CloseOperation</code>):
      * Automatically hide the frame after
      * invoking any registered <code>WindowListener</code>
      * objects.
      *
-     * <li><code>DISPOSE_ON_CLOSE</code>
-     * (defined in <code>WindowConstants</code>):
+     * <li><code>DISPOSE_ON_CLOSE</code> (defined in <code>CloseOperation</code>):
      * Automatically hide and dispose the
      * frame after invoking any registered <code>WindowListener</code>
      * objects.
      *
-     * <li><code>EXIT_ON_CLOSE</code>
-     * (defined in <code>JFrame</code>):
+     * <li><code>EXIT_ON_CLOSE</code> (defined in <code>CloseOperation</code>):
      * Exit the application using the <code>System</code>
      * <code>exit</code> method.  Use this only in applications.
      * </ul>
@@ -364,7 +350,7 @@ public class JFrame  extends Frame implements WindowConstants,
      *             isn't one of the above valid values
      * @see #addWindowListener
      * @see #getDefaultCloseOperation
-     * @see WindowConstants
+     * @see CloseOperation
      * @throws  SecurityException
      *        if <code>EXIT_ON_CLOSE</code> has been specified and the
      *        <code>SecurityManager</code> will
@@ -374,27 +360,25 @@ public class JFrame  extends Frame implements WindowConstants,
      * @beaninfo
      *   preferred: true
      *       bound: true
-     *        enum: DO_NOTHING_ON_CLOSE WindowConstants.DO_NOTHING_ON_CLOSE
-     *              HIDE_ON_CLOSE       WindowConstants.HIDE_ON_CLOSE
-     *              DISPOSE_ON_CLOSE    WindowConstants.DISPOSE_ON_CLOSE
-     *              EXIT_ON_CLOSE       WindowConstants.EXIT_ON_CLOSE
+     *        enum: DO_NOTHING_ON_CLOSE CloseOperation.DO_NOTHING_ON_CLOSE
+     *              HIDE_ON_CLOSE       CloseOperation.HIDE_ON_CLOSE
+     *              DISPOSE_ON_CLOSE    CloseOperation.DISPOSE_ON_CLOSE
+     *              EXIT_ON_CLOSE       CloseOperation.EXIT_ON_CLOSE
      * description: The frame's default close operation.
+
      */
-    public void setDefaultCloseOperation(int operation) {
-        if (operation != DO_NOTHING_ON_CLOSE &&
-            operation != HIDE_ON_CLOSE &&
-            operation != DISPOSE_ON_CLOSE &&
-            operation != EXIT_ON_CLOSE) {
-            throw new IllegalArgumentException("defaultCloseOperation must be one of: DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE, DISPOSE_ON_CLOSE, or EXIT_ON_CLOSE");
+    public void setDefaultCloseOperation(CloseOperation operation) {
+        if (operation == null) {
+            throw new IllegalArgumentException("defaultCloseOperation cannot be null");
         }
         if (this.defaultCloseOperation != operation) {
-            if (operation == EXIT_ON_CLOSE) {
+            if (operation == CloseOperation.EXIT_ON_CLOSE) {
                 SecurityManager security = System.getSecurityManager();
                 if (security != null) {
                     security.checkExit(0);
                 }
             }
-            int oldValue = this.defaultCloseOperation;
+            CloseOperation oldValue = this.defaultCloseOperation;
             this.defaultCloseOperation = operation;
             firePropertyChange("defaultCloseOperation", oldValue, operation);
         }
@@ -405,10 +389,10 @@ public class JFrame  extends Frame implements WindowConstants,
     * Returns the operation that occurs when the user
     * initiates a "close" on this frame.
     *
-    * @return an integer indicating the window-close operation
+    * @return an CloseOperation indicating the window-close operation
     * @see #setDefaultCloseOperation
     */
-    public int getDefaultCloseOperation() {
+    public CloseOperation getDefaultCloseOperation() {
         return defaultCloseOperation;
     }
 
@@ -844,13 +828,13 @@ public class JFrame  extends Frame implements WindowConstants,
      */
     protected String paramString() {
         String defaultCloseOperationString;
-        if (defaultCloseOperation == HIDE_ON_CLOSE) {
+        if (defaultCloseOperation == CloseOperation.HIDE_ON_CLOSE) {
             defaultCloseOperationString = "HIDE_ON_CLOSE";
-        } else if (defaultCloseOperation == DISPOSE_ON_CLOSE) {
+        } else if (defaultCloseOperation == CloseOperation.DISPOSE_ON_CLOSE) {
             defaultCloseOperationString = "DISPOSE_ON_CLOSE";
-        } else if (defaultCloseOperation == DO_NOTHING_ON_CLOSE) {
+        } else if (defaultCloseOperation == CloseOperation.DO_NOTHING_ON_CLOSE) {
             defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
-        } else if (defaultCloseOperation == 3) {
+        } else if (defaultCloseOperation == CloseOperation.EXIT_ON_CLOSE) {
             defaultCloseOperationString = "EXIT_ON_CLOSE";
         } else defaultCloseOperationString = "";
         String rootPaneString = (rootPane != null ?

@@ -50,7 +50,7 @@ public class IMLookAndFeel {
         JFrame frame = new JFrame("IM with L&F");
         //frame.setUndecorated( true );
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         JTextArea description = new JTextArea("Please try typing using below-the-spot IM.\n\n eg. Use City IM with the following arguement:\n    -Djava.awt.im.style=below-the-spot");
         description.setPreferredSize(new Dimension(250, 70));
         description.setEditable(false);

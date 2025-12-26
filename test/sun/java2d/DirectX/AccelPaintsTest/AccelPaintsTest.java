@@ -55,6 +55,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JPanel;
 
 public class AccelPaintsTest extends JPanel {
@@ -164,7 +165,7 @@ public class AccelPaintsTest extends JPanel {
             EventQueue.invokeAndWait(new Runnable() {
                 public void run() {
                     JFrame f = new JFrame("RadialGradientTest");
-                    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                     AccelPaintsTest t = new AccelPaintsTest();
                     f.add(t);
                     f.pack();

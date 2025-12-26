@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JPanel;
 
 public class TransformedPaintTest {
@@ -177,7 +178,7 @@ public class TransformedPaintTest {
 
     private static void showFrame(final TransformedPaintTest t) {
         JFrame f = new JFrame("TransformedPaintTest");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         final BufferedImage bi =
             new BufferedImage(R_WIDTH, R_HEIGHT, BufferedImage.TYPE_INT_RGB);
         JPanel p = new JPanel() {

@@ -57,7 +57,7 @@ public class bug6647340 {
 
     private void setupUI() {
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         JDesktopPane desktop = new JDesktopPane();
         frame.add(desktop);

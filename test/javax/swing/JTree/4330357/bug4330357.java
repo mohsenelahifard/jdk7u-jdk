@@ -140,7 +140,7 @@ public class bug4330357 {
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Test");
         frame.setSize(200, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
 
         tree = new JTree();
         tree.setEditable(true);

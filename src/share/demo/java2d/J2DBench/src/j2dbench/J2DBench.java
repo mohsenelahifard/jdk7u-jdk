@@ -55,6 +55,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+import javax.swing.CloseOperation;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -690,7 +691,7 @@ public class J2DBench {
             }
         };
         guiFrame = f;
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         f.getContentPane().setLayout(new BorderLayout());
         f.getContentPane().add(Group.root.getJComponent(), BorderLayout.CENTER);
         JPanel p = new JPanel();

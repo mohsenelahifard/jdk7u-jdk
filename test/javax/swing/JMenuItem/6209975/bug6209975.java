@@ -109,7 +109,7 @@ public class bug6209975 {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Test6209975");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.applyComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         frame.setLayout(new BorderLayout());
         button = new JButton("Focus holder");
@@ -133,7 +133,7 @@ public class bug6209975 {
         mb.add(menu);
 
         frame.setJMenuBar(mb);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocation(400, 300);
         frame.setVisible(true);

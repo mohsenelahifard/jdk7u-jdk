@@ -75,7 +75,7 @@ public class bug7158712 {
                 JFrame frame = new JFrame();
 
                 frame.add(comboBox, BorderLayout.NORTH);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(CloseOperation.EXIT_ON_CLOSE);
                 frame.setSize(new Dimension(400, 300));
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
