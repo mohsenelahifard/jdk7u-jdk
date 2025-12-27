@@ -101,7 +101,7 @@ import java.util.Queue;
  *
  */
 public class ConcurrentLinkedQueue<E> extends AbstractQueue<E>
-        implements Queue<E>, java.io.Serializable {
+        implements java.io.Serializable {
     private static final long serialVersionUID = 196745693267521676L;
 
     /*
