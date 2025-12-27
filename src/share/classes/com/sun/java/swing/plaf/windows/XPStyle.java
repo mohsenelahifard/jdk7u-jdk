@@ -54,6 +54,8 @@ import sun.awt.image.SunWritableRaster;
 import sun.awt.windows.ThemeReader;
 import sun.security.action.GetPropertyAction;
 import sun.swing.CachedPainter;
+import sun.java.swing.plaf.MarginSupport;
+import sun.java.swing.plaf.MarginSupported;
 
 import static com.sun.java.swing.plaf.windows.TMSchema.*;
 
@@ -312,18 +314,11 @@ class XPStyle {
 
         public Insets getBorderInsets(Component c, Insets insets)       {
             Insets margin = null;
-            //
-            // Ideally we'd have an interface defined for classes which
-            // support margins (to avoid this hackery), but we've
-            // decided against it for simplicity
-            //
-           if (c instanceof AbstractButton) {
-               margin = ((AbstractButton)c).getMargin();
-           } else if (c instanceof JToolBar) {
-               margin = ((JToolBar)c).getMargin();
-           } else if (c instanceof JTextComponent) {
-               margin = ((JTextComponent)c).getMargin();
-           }
+
+            MarginSupported ms = MarginSupport.get(c);
+            if (ms != null) {
+                margin = ms.getMargin();
+            }
            insets.top    = (margin != null? margin.top : 0)    + thickness;
            insets.left   = (margin != null? margin.left : 0)   + thickness;
            insets.bottom = (margin != null? margin.bottom : 0) + thickness;
@@ -383,13 +378,10 @@ class XPStyle {
             // support margins (to avoid this hackery), but we've
             // decided against it for simplicity
             //
-           if (c instanceof AbstractButton) {
-               margin = ((AbstractButton)c).getMargin();
-           } else if (c instanceof JToolBar) {
-               margin = ((JToolBar)c).getMargin();
-           } else if (c instanceof JTextComponent) {
-               margin = ((JTextComponent)c).getMargin();
-           }
+            MarginSupported ms = MarginSupport.get(c);
+            if (ms != null) {
+                margin = ms.getMargin();
+            }
            insets.top    = (margin != null? margin.top : 0)    + borderInsets.top;
            insets.left   = (margin != null? margin.left : 0)   + borderInsets.left;
            insets.bottom = (margin != null? margin.bottom : 0) + borderInsets.bottom;
