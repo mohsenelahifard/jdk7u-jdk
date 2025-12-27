@@ -149,7 +149,7 @@ public class MutableCallSite extends CallSite {
      *         has a method type that differs from the previous target
      * @see #getTarget
      */
-    @Override public void setTarget(MethodHandle newTarget) {
+    public void setTarget(MethodHandle newTarget) {
         checkTargetChange(this.target, newTarget);
         setTargetNormal(newTarget);
     }

@@ -102,9 +102,6 @@ public class ConstantCallSite extends CallSite {
      * @param ignore a new target proposed for the call site, which is ignored
      * @throws UnsupportedOperationException because this kind of call site cannot change its target
      */
-    @Override public final void setTarget(MethodHandle ignore) {
-        throw new UnsupportedOperationException();
-    }
 
     /**
      * Returns this call site's permanent target.

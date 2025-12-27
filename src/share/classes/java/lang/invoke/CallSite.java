@@ -99,11 +99,6 @@ public class CallSite {
      * Make a blank call site object with the given method type.
      * An initial target method is supplied which will throw
      * an {@link IllegalStateException} if called.
-     * <p>
-     * Before this {@code CallSite} object is returned from a bootstrap method,
-     * it is usually provided with a more useful target method,
-     * via a call to {@link CallSite#setTarget(MethodHandle) setTarget}.
-     * @throws NullPointerException if the proposed type is null
      */
     /*package-private*/
     CallSite(MethodType type) {
@@ -204,7 +199,6 @@ public class CallSite {
      * @see MutableCallSite#setTarget
      * @see VolatileCallSite#setTarget
      */
-    public abstract void setTarget(MethodHandle newTarget);
 
     void checkTargetChange(MethodHandle oldTarget, MethodHandle newTarget) {
         MethodType oldType = oldTarget.type();
